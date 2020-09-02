@@ -2,7 +2,6 @@ import { pizzasData } from '../../pizzasData'
 
 const initialState = {
     items: [],
-    // isLoaded: false
     sortBy: 'rating',
     category: null
 }
@@ -13,13 +12,8 @@ const pizzas = (state = initialState, action) => {
             return {
                 ...state,
                 items: pizzasData,
-                // isLoaded: action.isLoaded
             }
-        // case 'SET_LOADED':
-        //     return {
-        //         ...state,
-        //         isLoaded: action.payload
-        //     }
+
         case 'SET_CATEGORY':
             const filteredPizzas = (category) => {
                 if (category !== null) {
@@ -35,9 +29,6 @@ const pizzas = (state = initialState, action) => {
             }
         case 'SET_SORT_BY':
             const sortedPizza = (sortType) => {
-                // return state.items.sort()
-
-
                 return state.items.sort((prev, next) => {
                     if(sortType === 'name') {
                         return next[sortType][0] > prev[sortType][0] ? -1 

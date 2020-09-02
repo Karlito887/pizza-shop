@@ -45,7 +45,6 @@ const cart = (state = initialState, action) => {
             }
 
             const currentPrice = lastPizzaItems[action.id][0].price;
-            // delete newPizzaItems[action.id]
             lastPizzaItems[action.id].pop()
             return {
                 ...state,
